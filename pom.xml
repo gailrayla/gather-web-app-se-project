@@ -7,7 +7,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.GATHER</groupId>
     <artifactId>CSE346-GATHER</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>3.1.0-SNAPSHOT</version>
  
     <properties>
         <java.version>19</java.version>
