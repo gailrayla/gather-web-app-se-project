@@ -12,6 +12,7 @@
     <properties>
         <java.version>19</java.version>
         <spring.version>6.0.2</spring.version>
+        <junit.version>5.9.2</junit.version>
     </properties>
  
     <dependencies>
@@ -19,11 +20,12 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>6.0.2</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>5.9.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
