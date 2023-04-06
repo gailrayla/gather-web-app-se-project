@@ -1,5 +1,4 @@
 ## Milestone 1
----
 
 ### Table of Contents
 * About the Project
@@ -28,7 +27,7 @@ To get started with the project, follow these steps.
 **Step 1**: Clone the git repository 
 
 ```javascript
-$ git clone https://github.com/gailrayla/CSE346-Group-20.git
+$ git clone [https://github.com/gailrayla/CSE346-Group-20.git]
 ```
 
 **Step 2**: Build docker 
