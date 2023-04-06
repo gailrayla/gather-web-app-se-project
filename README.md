@@ -53,3 +53,11 @@ Below code shows what the server offers;
 ```javascript
 curl http://localhost:8080
 ```
+We can use the people link to see the `Person` records.
+```javascript
+curl http://localhost:8080/people
+```
+And then, use the below command to create a `Person`.
+```javascript
+curl -i -X POST -H "Content-Type:application/json" -d "{  \"firstName\" : \"Frodo\",  \"lastName\" : \"Baggins\" }" http://localhost:8080/people
+```
