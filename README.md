@@ -31,6 +31,9 @@ git clone https://github.com/gailrayla/CSE346-Group-20.git
 **Step 2**: Build docker 
 
 ```javascript
+docker build
+```
+```javascript
 docker build -t image_name /path/to/Dockerfile
 ```
 
