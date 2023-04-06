@@ -29,8 +29,11 @@ To get started with the project, follow these steps.
 Command line: $ git clone https://github.com/gailrayla/CSE346-Group-20.git
 
 **Step 2**: Build docker 
+
 Command line: $ docker build -t image_name /path/to/Dockerfile
+
 **Step 3**: Run docker image
+
 Command line: $ docker run -it image_name
 
 
