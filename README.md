@@ -1,4 +1,5 @@
 ## Milestone 1
+---
 
 ### Table of Contents
 * About the Project
