@@ -49,7 +49,8 @@ In order to run our application we can either choose `Run` option from the IDE w
 ./mvnw clean spring-boot:run
 ```
 
-After starting the application, running the below code 
+After starting the application, we can use `curl` tool to test our application.
+Below code shows what the server offers;
 ```javascript
-curl -v localhost:8080/employees
+curl http://localhost:8080
 ```
