@@ -6,8 +6,6 @@
 * Prerequisites
 * Installation
 * Usage
-* Contributing
-* Contact
 
 ### About the milestone
 In this milestone, we built the development environment for our web app using Docker, Rest API, Maven, and MongoDB. By utilizing Docker, we packaged our applications along with their dependencies into a single container. With Rest API, we created the web artchitecture of our web app. Moreover, we simplified our build process by using Maven. For the database management system, we selected MongoDB due to its great performance potential.
