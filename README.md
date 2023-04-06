@@ -68,3 +68,12 @@ curl -i -X POST -H "Content-Type:application/json" -d "{  \"firstName\" : \"Frod
 #### Milestone Part III
 To begin with Part III, MongoDB is added as a dependency in the pom.xml file first. Then, a MongoDB Database is linked and configured to the Spring Boot application through adding the hostame, port, and database name to the application.properties under the folder in the resources folder in the main folder in src directory. After this, a MongoDB configuratio class that extends AbstractMongoConfigurationSupport and overrides the mongoClient() is created. From this, we create a spring data repository interface for User data called ‘UserRepository’ that extends MongoRepository and defines methods for accessing the MongoDB collection.
 
+After Pulling the **MongoDB** image on **Docker**, we start with running the **MongoDB container** with the below commands;
+
+```javascript
+docker pull mongo
+```
+```javascript
+docker run --name our-first-mongo -d mongo
+```
+
