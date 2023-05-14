@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Post.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">gather</a> &gt; <a href="index.source.html" class="el_package">gather.gather.Model</a> &gt; <span class="el_source">Post.java</span></div><h1>Post.java</h1><pre class="source lang-java linenums">package gather.gather.Model;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import javax.persistence.Id;
+import java.time.LocalDateTime;
+
+@Document(collection = &quot;posts&quot;)
+public class Post {
+    @Id
+    private String id;
+
+    @Indexed(expireAfterSeconds = 604800) // Set expiry for 7 days (24 * 60 * 60 * 7 seconds)
+    @CreatedDate
+    private LocalDateTime CreatedAt;
+    private User user;
+    private String desc;
+    private String date;
+    public String getId() {
+<span class="fc" id="L22">        return id;</span>
+    }
+    public LocalDateTime getCreatedAt() {
+<span class="fc" id="L25">        return CreatedAt;</span>
+    }
+    public User getUser() {
+<span class="fc" id="L28">        return user;</span>
+    }
+
+    public void setUser(User user) {
+<span class="fc" id="L32">        this.user = user;</span>
+<span class="fc" id="L33">    }</span>
+
+    public String getDesc() {
+<span class="fc" id="L36">        return desc;</span>
+    }
+
+    public void setDesc(String desc) {
+<span class="fc" id="L40">        this.desc = desc;</span>
+<span class="fc" id="L41">    }</span>
+
+    public String getDate() {
+<span class="fc" id="L44">        return date;</span>
+    }
+
+    public void setDate(String date) {
+<span class="fc" id="L48">        this.date = date;</span>
+<span class="fc" id="L49">    }</span>
+
+    public void setId(String id) {
+<span class="fc" id="L52">        this.id = id;</span>
+<span class="fc" id="L53">    }</span>
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+<span class="fc" id="L56">        CreatedAt = createdAt;</span>
+<span class="fc" id="L57">    }</span>
+
+<span class="fc" id="L59">    public Post(User user, String desc, String date) {</span>
+<span class="fc" id="L60">        this.CreatedAt = CreatedAt;</span>
+<span class="fc" id="L61">        this.user = user;</span>
+<span class="fc" id="L62">        this.desc = desc;</span>
+<span class="fc" id="L63">        this.date = date;</span>
+<span class="fc" id="L64">    }</span>
+
+    //public Post(int date) {
+    //this.date = date;
+    //}
+
+
+    @Override
+    public String toString() {
+<span class="fc" id="L73">        return &quot;Post{&quot; +</span>
+                &quot;id='&quot; + id + '\'' +
+                &quot;, CreatedAt=&quot; + CreatedAt +
+                &quot;, user=&quot; + user +
+                &quot;, desc='&quot; + desc + '\'' +
+                &quot;, date='&quot; + date + '\'' +
+                '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
