@@ -137,12 +137,16 @@ curl -X GET http://localhost:8080/posts/{gail add a post id here please}/comment
 #### Creating a New User
 Use the following `curl` command to create a new user:
 ```javascript
-
+curl -X POST http://localhost:8080/users/signup -H "Content-Type: application/json" -d '{"name":"May","email":"mayii@example.com","password":"password23"}'
 ```
 #### Accessing a user
 Use the following `curl` command to access the data of a registered user:
 ```javascript
-curl -X POST http://localhost:8080/users/signup -H "Content-Type: application/json" -d '{"name":"May","email":"mayii@example.com","password":"password23"}'
+curl -X GET http://localhost:8080/users/access/{id}
+```
+Example command with a already exsisting user:
+```javascript
+curl -X GET http://localhost:8080/users/access/{id}
 ```
 #### Updating a User
 Use the following `curl` command to update the data of a registered user:
