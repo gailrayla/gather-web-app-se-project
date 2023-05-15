@@ -21,4 +21,16 @@ sh newrun.sh
 - Making comments on posts
 - Registration (trivial feature)
 
-### Creating Posts
+### Posts
+#### Open Endpoints
+- Creating a new post: POST /posts/create
+- Accessing all of the posts: GET /posts/access 
+- Deleting an exsisting post: DELETE /posts/delete/{id}
+
+#### Creating Posts
+Use the following 'curl' command to create a new post:
+```javascript
+curl -X POST http://localhost:8080/posts/create -H "Content-Type: application/json" -d '{"user":{"name":"Molli"},"desc":"Planning to study algorithms at 8pm in the library. Who wants to join?", "date":"13th of May"}'
+```
+- Example success response:
+"{"id":"64622451706993490d711ae1","createdAt":null,"user":{"id":null,"name":"Molli","email":null,"password":null},"desc":"Planning to study algorithms at 8pm in the library. Who wants to join?","date":"13th of May","comments":[]}%  "
