@@ -76,3 +76,7 @@ curl -X GET http://localhost:8080/posts/systems
 ```
 - Example success response:
 ` [{"id":"646226b718cd9129ef52ad4b","createdAt":"2023-05-15T21:33:59.55","user":{"id":null,"name":"Jane","email":null,"password":null},"desc":"Planning to study computer systems at 9pm in the library. Who wants to join?","date":"15th of May","comments":[]}]% `
+
+```javascript
+[{"id":"646226b718cd9129ef52ad4b","createdAt":"2023-05-15T21:33:59.55","user":{"id":null,"name":"Jane","email":null,"password":null},"desc":"Planning to study computer systems at 9pm in the library. Who wants to join?","date":"15th of May","comments":[]}]% 
+```
