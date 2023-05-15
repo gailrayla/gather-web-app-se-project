@@ -23,14 +23,14 @@ sh newrun.sh
 
 ## Posts
 #### Open Endpoints
-- Creating a new post: POST /posts
-- Accessing all of the posts: GET /posts 
+- Creating a new post: POST /posts/create
+- Accessing all of the posts: GET /posts/access 
 - Deleting an exsisting post: DELETE /posts/delete/{id}
 
 #### Creating Posts
 Use the following `curl` command to create an example new post:
 ```javascript
-curl -X POST http://localhost:8080/posts -H "Content-Type: application/json" -d '{"user":{"name":"Molli"},"desc":"Planning to study algorithms at 8pm in the library. Who wants to join?", "date":"13th of May"}'
+curl -X POST http://localhost:8080/posts/create -H "Content-Type: application/json" -d '{"user":{"name":"Molli"},"desc":"Planning to study algorithms at 8pm in the library. Who wants to join?", "date":"13th of May"}'
 ```
 - Example success response:
 ```javascript
@@ -40,7 +40,7 @@ curl -X POST http://localhost:8080/posts -H "Content-Type: application/json" -d 
 #### Accessing All Posts
 Use the following `curl` command to display all of the posts that has been created:
 ```javascript
-curl -X GET http://localhost:8080/posts
+curl -X GET http://localhost:8080/posts/access
 ```
 - Example success response:
 ```javascript
