@@ -34,4 +34,14 @@ curl -X POST http://localhost:8080/posts/create -H "Content-Type: application/js
 ```
 - Example success response:
 
-`{"id":"64622451706993490d711ae1","createdAt":null,"user":{"id":null,"name":"Molli","email":null,"password":null},"desc":"Planning to study algorithms at 8pm in the library. Who wants to join?","date":"13th of May","comments":[]}% `
+`{"id":"6462264e18cd9129ef52ad4a","createdAt":"2023-05-15T21:32:14.615208","user":{"id":null,"name":"Molli","email":null,"password":null},"desc":"Planning to study algorithms at 8pm in the library. Who wants to join?","date":"13th of May","comments":[]}%  `
+
+#### Accessing All Posts
+Use the following `curl` command to display all of the posts that has been created:
+```javascript
+curl -X GET http://localhost:8080/posts/access
+```
+- Example success response:
+
+`
+[{"id":"6462264e18cd9129ef52ad4a","createdAt":"2023-05-15T21:32:14.615","user":{"id":null,"name":"Molli","email":null,"password":null},"desc":"Planning to study algorithms at 8pm in the library. Who wants to join?","date":"13th of May","comments":[]},{"id":"646226b718cd9129ef52ad4b","createdAt":"2023-05-15T21:33:59.55","user":{"id":null,"name":"Jane","email":null,"password":null},"desc":"Planning to study computer systems at 9pm in the library. Who wants to join?","date":"15th of May","comments":[]},{"id":"646226fa18cd9129ef52ad4c","createdAt":"2023-05-15T21:35:06.967","user":{"id":null,"name":"Tom","email":null,"password":null},"desc":"Planning to study for Theory of Computation at 5pm at the first floor in the library.","date":"21st of May","comments":[]},{"id":"6462273f18cd9129ef52ad4d","createdAt":"2023-05-15T21:36:15.927","user":{"id":null,"name":"Hannah","email":null,"password":null},"desc":"Who wants to study discrete math? I am available whole day.","date":"21st of May","comments":[]}]%  `
