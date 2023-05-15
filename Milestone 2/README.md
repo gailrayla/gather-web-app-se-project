@@ -28,7 +28,7 @@ sh newrun.sh
 - Deleting an exsisting post: DELETE /posts/delete/{id}
 
 #### Creating Posts
-Use the following `curl` command to create a new post:
+Use the following `curl` command to create an example new post:
 ```javascript
 curl -X POST http://localhost:8080/posts/create -H "Content-Type: application/json" -d '{"user":{"name":"Molli"},"desc":"Planning to study algorithms at 8pm in the library. Who wants to join?", "date":"13th of May"}'
 ```
@@ -49,6 +49,7 @@ curl -X GET http://localhost:8080/posts/access
 #### Deleting a Post
 - Required URL Params:
 id=[string]
+
 Use the following `curl` command to delete a specific post using the uniquely generated id for that post:
 ```javascript
 curl -X DELETE http://localhost:8080/posts/delete/{id}
@@ -57,3 +58,21 @@ Example with an already existing id:
 ```javascript
 curl -X DELETE http://localhost:8080/posts/delete/6462286c18cd9129ef52ad4e
 ```
+
+## Searching
+#### Open Endpoints
+- Searching through posts: GET /posts/{text}
+
+#### Searching Through Posts
+Use the following `curl` command to search through all of the posts using a keyword:
+```javascript
+curl -X GET http://localhost:8080/posts/{text}
+```
+*Replace {text} with the word you want to search*
+
+Example:
+```javascript
+curl -X GET http://localhost:8080/posts/systems
+```
+- Example success response:
+` [{"id":"646226b718cd9129ef52ad4b","createdAt":"2023-05-15T21:33:59.55","user":{"id":null,"name":"Jane","email":null,"password":null},"desc":"Planning to study computer systems at 9pm in the library. Who wants to join?","date":"15th of May","comments":[]}]% `
