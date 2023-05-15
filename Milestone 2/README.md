@@ -114,7 +114,7 @@ curl -X DELETE http://localhost:8080/comments/{commentId}
 
 Example command with already existing comment id:
 ```javascript
-curl -X DELETE http://localhost:8080/comments/{gail add a comment id here please}
+curl -X DELETE http://localhost:8080/comments/6462370f825da32475e89798
 ```
 
 #### Accessing the Comments 
@@ -124,7 +124,7 @@ curl -X GET http://localhost:8080/posts/{postId}/comments
 ```
 Example command with a post that already has comments:
 ```javascript
-curl -X GET http://localhost:8080/posts/{gail add a post id here please}/comments
+curl -X GET http://localhost:8080/posts/6462286c18cd9129ef52ad4e/comments
 ```
 
 ## Registration
