@@ -44,4 +44,16 @@ curl -X GET http://localhost:8080/posts/access
 - Example success response:
 
 `
-[{"id":"6462264e18cd9129ef52ad4a","createdAt":"2023-05-15T21:32:14.615","user":{"id":null,"name":"Molli","email":null,"password":null},"desc":"Planning to study algorithms at 8pm in the library. Who wants to join?","date":"13th of May","comments":[]},{"id":"646226b718cd9129ef52ad4b","createdAt":"2023-05-15T21:33:59.55","user":{"id":null,"name":"Jane","email":null,"password":null},"desc":"Planning to study computer systems at 9pm in the library. Who wants to join?","date":"15th of May","comments":[]},{"id":"646226fa18cd9129ef52ad4c","createdAt":"2023-05-15T21:35:06.967","user":{"id":null,"name":"Tom","email":null,"password":null},"desc":"Planning to study for Theory of Computation at 5pm at the first floor in the library.","date":"21st of May","comments":[]},{"id":"6462273f18cd9129ef52ad4d","createdAt":"2023-05-15T21:36:15.927","user":{"id":null,"name":"Hannah","email":null,"password":null},"desc":"Who wants to study discrete math? I am available whole day.","date":"21st of May","comments":[]}]%  `
+[{"id":"6462264e18cd9129ef52ad4a","createdAt":"2023-05-15T21:32:14.615","user":{"id":null,"name":"Molli","email":null,"password":null},"desc":"Planning to study algorithms at 8pm in the library. Who wants to join?","date":"13th of May","comments":[]},{"id":"646226b718cd9129ef52ad4b","createdAt":"2023-05-15T21:33:59.55","user":{"id":null,"name":"Jane","email":null,"password":null},"desc":"Planning to study computer systems at 9pm in the library. Who wants to join?","date":"15th of May","comments":[]},{"id":"646226fa18cd9129ef52ad4c","createdAt":"2023-05-15T21:35:06.967","user":{"id":null,"name":"Tom","email":null,"password":null},"desc":"Planning to study for Theory of Computation at 5pm at the first floor in the library.","date":"21st of May","comments":[]},{"id":"6462286c18cd9129ef52ad4e","createdAt":"2023-05-15T21:41:16.552955","user":{"id":null,"name":"Hannah","email":null,"password":null},"desc":"Who wants to study discrete math? I am available whole day.","date":"21st of May","comments":[]}%    `
+
+#### Deleting a Post
+- Required URL Params:
+id=[string]
+Use the following `curl` command to delete a specific post using the uniquely generated id for that post:
+```javascript
+curl -X DELETE http://localhost:8080/posts/delete/{id}
+```
+Example with an already existing id:
+```javascript
+curl -X DELETE http://localhost:8080/posts/delete/6462286c18cd9129ef52ad4e
+```
