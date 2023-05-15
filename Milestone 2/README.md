@@ -97,7 +97,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }' http://localhost:8080/posts/POST_ID/comments
 ```
 
-Example command with alread existing user and post id:
+Example command with already existing user and post id:
 ```javascript
 curl -X POST -H "Content-Type: application/json" -d '{
   "user": {
@@ -112,15 +112,19 @@ Use the following `curl` command to delete a specific comment:
 curl -X DELETE http://localhost:8080/comments/{commentId}
 ```
 
-Example command with alread existing comment id:
+Example command with already existing comment id:
 ```javascript
-curl -X DELETE http://localhost:8080/comments/{commentId}
+curl -X DELETE http://localhost:8080/comments/{gail add a comment id here please}
 ```
 
 #### Accessing the Comments 
 Use the following `curl` command to
 ```javascript
-
+curl -X GET http://localhost:8080/posts/{postId}/comments
+```
+Example command with a post that already has comments:
+```javascript
+curl -X GET http://localhost:8080/posts/{gail add a post id here please}/comments
 ```
 
 ## Registration
