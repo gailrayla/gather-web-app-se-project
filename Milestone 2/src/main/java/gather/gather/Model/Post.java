@@ -6,6 +6,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Document(collection = "posts")
 public class Post {
@@ -14,16 +16,20 @@ public class Post {
 
     @Indexed(expireAfterSeconds = 604800) // Set expiry for 7 days (24 * 60 * 60 * 7 seconds)
     @CreatedDate
-    private LocalDateTime CreatedAt;
+    private LocalDateTime createdAt;
     private User user;
     private String desc;
     private String date;
+    private List<Comment> comments = new ArrayList<>();
+
     public String getId() {
         return id;
     }
+
     public LocalDateTime getCreatedAt() {
-        return CreatedAt;
+        return createdAt;
     }
+
     public User getUser() {
         return user;
     }
@@ -48,31 +54,41 @@ public class Post {
         this.date = date;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public List<Comment> getComments() {
+        return comments;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        CreatedAt = createdAt;
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public void addComment(Comment comment) {
+        this.comments.add(comment);
+    }
+
+    public void removeComment(Comment comment) {
+        this.comments.remove(comment);
     }
 
     public Post(User user, String desc, String date) {
-        this.CreatedAt = CreatedAt;
         this.user = user;
         this.desc = desc;
         this.date = date;
     }
 
-    //public Post(int date) {
-    //this.date = date;
-    //}
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
     @Override
     public String toString() {
         return "Post{" +
                 "id='" + id + '\'' +
-                ", CreatedAt=" + CreatedAt +
+                ", createdAt=" + createdAt +
                 ", user=" + user +
                 ", desc='" + desc + '\'' +
                 ", date='" + date + '\'' +

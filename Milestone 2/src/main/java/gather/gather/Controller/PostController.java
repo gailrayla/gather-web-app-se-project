@@ -18,13 +18,13 @@ public class PostController {
     @Autowired
     PostRepository repo;
 
-    @GetMapping("/posts")
+    @GetMapping("/posts/access")
     @CrossOrigin
     public List<Post> GetAllPosts(){
         return repo.findAll();
     }
 
-    @PostMapping("/posts")
+    @PostMapping("/posts/create")
     @CrossOrigin
     public ResponseEntity<Object> addPost(@RequestBody Post post) {
         if (!isValidPost(post)) {

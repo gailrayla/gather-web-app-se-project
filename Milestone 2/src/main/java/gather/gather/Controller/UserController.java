@@ -13,6 +13,7 @@ import java.util.Optional;
 // It allows you to group related endpoints under a common base URL (../users/signup...)
 // When the UserController class is annotated with @RequestMapping("/users"), it means that
 // all the endpoints defined within this class will be relative to the /users path.
+@CrossOrigin(origins = "http://localhost:8080")
 @RequestMapping("/users")
 public class UserController {
     @Autowired
@@ -67,7 +68,7 @@ public class UserController {
         Optional<User> user = userRepository.findById(id);
 
         if (user.isPresent()) {
-            return ResponseEntity.ok(user);
+            return ResponseEntity.ok(user.get());
         } else {
             return ResponseEntity.notFound().build();
         }

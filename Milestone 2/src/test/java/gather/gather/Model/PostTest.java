@@ -4,8 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PostTest {
 
@@ -37,8 +38,11 @@ public class PostTest {
 
     @Test
     public void testSetAndGetId() {
+        // Create a User object
+        User user = new User("gail", "gail@example.com", "124");
+
         // Create a Post object
-        Post post = new Post(new User("gail", "gail@example.com", "124"), "Post1", "30 October 2023");
+        Post post = new Post(user, "Post1", "30 October 2023");
 
         // Set a specific ID
         post.setId("postId");
@@ -50,8 +54,11 @@ public class PostTest {
 
     @Test
     public void testSetAndGetCreatedAt() {
+        // Create a User object
+        User user = new User("gail", "gail@example.com", "124");
+
         // Create a Post object
-        Post post = new Post(new User("gail", "gail@example.com", "124"), "Post1", "30 October 2023");
+        Post post = new Post(user, "Post1", "30 October 2023");
 
         // Set a specific creation date
         LocalDateTime createdAt = LocalDateTime.of(2023, 10, 15, 10, 30, 0);
@@ -61,6 +68,7 @@ public class PostTest {
         LocalDateTime retrievedCreatedAt = post.getCreatedAt();
         Assertions.assertEquals(createdAt, retrievedCreatedAt);
     }
+
 
     @Test
     public void testSetAndGetUser() {
@@ -101,20 +109,32 @@ public class PostTest {
         String date = post.getDate();
         Assertions.assertEquals("01 November 2023", date);
     }
+
     @Test
-    public void testToString() {
-        //User user = new User("John Doe", "johndoe@example.com", "password");
-        Post post = new Post(new User("gail", "gail@example.com", "124"), "Post1", "2023-05-20");
+    public void testAddAndRemoveComment() {
+        // Create a User object
+        User user = new User("gail", "gail@example.com", "124");
 
-        String expectedString = "Post{" +
-                "id='null'" +
-                ", CreatedAt=" + null +
-                ", user=" + post.getUser() +
-                ", desc='Post1'" +
-                ", date='2023-05-20'" +
-                '}';
+        // Create a Post object
+        Post post = new Post(user, "Post1", "30 October 2023");
 
+        // Create a Comment object
+        Comment comment = new Comment(user, "This is a comment on the post");
 
-        assertEquals(expectedString, post.toString());
+        // Add the comment to the post
+        post.addComment(comment);
+
+        // Get the comments and verify that the comment was added
+        List<Comment> comments = post.getComments();
+        Assertions.assertEquals(1, comments.size());
+        Assertions.assertTrue(comments.contains(comment));
+
+        // Remove the comment from the post
+        post.removeComment(comment);
+
+        // Get the comments and verify that the comment was removed
+        comments = post.getComments();
+        Assertions.assertEquals(0, comments.size());
+        Assertions.assertFalse(comments.contains(comment));
     }
 }

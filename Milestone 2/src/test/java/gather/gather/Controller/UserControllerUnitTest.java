@@ -2,8 +2,11 @@ package gather.gather.Controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import gather.gather.Model.User;
+import gather.gather.Repository.CommentRepository;
+import gather.gather.Repository.PostRepository;
 import gather.gather.Repository.UserRepository;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -25,8 +28,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class UserControllerUnitTest {
     @Autowired
     MockMvc mockMvc;
+
+    @MockBean
+    private CommentRepository commentRepository;
     @MockBean
     private UserRepository userRepository;
+    @MockBean
+    private PostRepository postRepository;
 
     @Test // Test case 1: User doesn't exist (success case)
     public void test_signUp_Success() throws Exception {

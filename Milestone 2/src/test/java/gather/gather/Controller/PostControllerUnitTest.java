@@ -156,7 +156,7 @@ public class PostControllerUnitTest {
         postRepository.save(post);
 
         // Sleep for a sufficient amount of time to allow for the post to be deleted
-        Thread.sleep(5_000); // Wait for 5 seconds
+        Thread.sleep(5_000); // Wait for 10 seconds
 
         // Attempt to retrieve the post from the database
         Post foundPost = postRepository.findById(post.getId()).orElse(null);

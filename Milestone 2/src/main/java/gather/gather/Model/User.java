@@ -5,7 +5,7 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-//@Data
+
 // "@Document" is used to map the User class to a MongoDB collection called "users"
 @Document(collection = "user")
 public class User {
