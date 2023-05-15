@@ -89,13 +89,34 @@ curl -X GET http://localhost:8080/posts/systems
 #### Adding a New Comment
 Use the following `curl` command to add a new comment to a specific post:
 ```javascript
+curl -X POST -H "Content-Type: application/json" -d '{
+  "user": {
+    "id": "USER_ID"   // Replace USER_ID with the actual user ID obtained from the previous response
+  },
+  "content": "This is a comment on the post"
+}' http://localhost:8080/posts/POST_ID/comments
+```
 
+Example command with alread existing user and post id:
+```javascript
+curl -X POST -H "Content-Type: application/json" -d '{
+  "user": {
+    "id": "646211f2213b14481103acb8"
+  },
+  "content": "This is a comment on the post"
+}' http://localhost:8080/posts/646233184a4ed21fe7f50873/comments
 ```
 #### Deleting a Comment
-Use the following `curl` command to
+Use the following `curl` command to delete a specific comment:
 ```javascript
-
+curl -X DELETE http://localhost:8080/comments/{commentId}
 ```
+
+Example command with alread existing comment id:
+```javascript
+curl -X DELETE http://localhost:8080/comments/{commentId}
+```
+
 #### Accessing the Comments 
 Use the following `curl` command to
 ```javascript
