@@ -101,10 +101,10 @@ Example command with already existing user and post id:
 ```javascript
 curl -X POST -H "Content-Type: application/json" -d '{
   "user": {
-    "id": "646211f2213b14481103acb8"
+    "id": "646211be25bbeb4964c3f136"
   },
-  "content": "This is a comment on the post"
-}' http://localhost:8080/posts/646233184a4ed21fe7f50873/comments
+  "content": "i am interested"
+}' http://localhost:8080/posts/64622f5e4a4ed21fe7f50871/comments
 ```
 #### Deleting a Comment
 Use the following `curl` command to delete a specific comment:
