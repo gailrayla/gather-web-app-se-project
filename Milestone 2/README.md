@@ -135,22 +135,26 @@ curl -X GET http://localhost:8080/posts/{gail add a post id here please}/comment
 - Deleting an exsisting user: DELETE /users/delete/{id}
 
 #### Creating a New User
-Use the following `curl` command to
+Use the following `curl` command to create a new user:
 ```javascript
 
 ```
 #### Accessing a user
-Use the following `curl` command to
+Use the following `curl` command to access the data of a registered user:
 ```javascript
-
+curl -X POST http://localhost:8080/users/signup -H "Content-Type: application/json" -d '{"name":"May","email":"mayii@example.com","password":"password23"}'
 ```
 #### Updating a User
-Use the following `curl` command to
+Use the following `curl` command to update the data of a registered user:
 ```javascript
-
+curl -X PUT http://localhost:8080/users/update/{id} -H "Content-Type: application/json" -d '{"name":"Jen","email":"jennie@gmail.com","password":"password23"}'    
+```
+Example command with a already exsisting user:
+```javascript
+curl -X PUT http://localhost:8080/users/update/646211f2213b14481103acb8 -H "Content-Type: application/json" -d '{"name":"Jen","email":"jennie@gmail.com","password":"password23"}'    
 ```
 #### Deleting a User
-Use the following `curl` command to
+Use the following `curl` command to delete a user:
 ```javascript
-
+curl -X DELETE http://localhost:8080/posts/delete/{id}
 ```
