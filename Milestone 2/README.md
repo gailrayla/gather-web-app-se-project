@@ -23,14 +23,14 @@ sh newrun.sh
 
 ## Posts
 #### Open Endpoints
-- Creating a new post: POST /posts/create
-- Accessing all of the posts: GET /posts/access 
+- Creating a new post: POST /posts
+- Accessing all of the posts: GET /posts 
 - Deleting an exsisting post: DELETE /posts/delete/{id}
 
 #### Creating Posts
 Use the following `curl` command to create an example new post:
 ```javascript
-curl -X POST http://localhost:8080/posts/create -H "Content-Type: application/json" -d '{"user":{"name":"Molli"},"desc":"Planning to study algorithms at 8pm in the library. Who wants to join?", "date":"13th of May"}'
+curl -X POST http://localhost:8080/posts -H "Content-Type: application/json" -d '{"user":{"name":"Molli"},"desc":"Planning to study algorithms at 8pm in the library. Who wants to join?", "date":"13th of May"}'
 ```
 - Example success response:
 ```javascript
@@ -40,7 +40,7 @@ curl -X POST http://localhost:8080/posts/create -H "Content-Type: application/js
 #### Accessing All Posts
 Use the following `curl` command to display all of the posts that has been created:
 ```javascript
-curl -X GET http://localhost:8080/posts/access
+curl -X GET http://localhost:8080/posts
 ```
 - Example success response:
 ```javascript
@@ -81,7 +81,26 @@ curl -X GET http://localhost:8080/posts/systems
 ```
 
 ## Commenting
+#### Open Endpoints
+- Adding a new comment to a post: POST /posts/{postId}/comments
+- Deleting a comment: DELETE /comments/{commentId}
+- Accessing the comments of a post: GET /posts/{postId}/comments
 
+#### Adding a New Comment
+Use the following `curl` command to add a new comment to a specific post:
+```javascript
+
+```
+#### Deleting a Comment
+Use the following `curl` command to
+```javascript
+
+```
+#### Accessing the Comments 
+Use the following `curl` command to
+```javascript
+
+```
 
 ## Registration
 #### Open Endpoints
