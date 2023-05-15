@@ -118,7 +118,7 @@ curl -X DELETE http://localhost:8080/comments/{gail add a comment id here please
 ```
 
 #### Accessing the Comments 
-Use the following `curl` command to
+Use the following `curl` command to access the comments under a specific post:
 ```javascript
 curl -X GET http://localhost:8080/posts/{postId}/comments
 ```
@@ -134,3 +134,23 @@ curl -X GET http://localhost:8080/posts/{gail add a post id here please}/comment
 - Updating an exsisting user: PUT /users/update/{id}
 - Deleting an exsisting user: DELETE /users/delete/{id}
 
+#### Creating a New User
+Use the following `curl` command to
+```javascript
+
+```
+#### Accessing a user
+Use the following `curl` command to
+```javascript
+
+```
+#### Updating a User
+Use the following `curl` command to
+```javascript
+
+```
+#### Deleting a User
+Use the following `curl` command to
+```javascript
+
+```
