@@ -124,7 +124,7 @@ curl -X GET http://localhost:8080/posts/{postId}/comments
 ```
 Example command with a post that already has comments:
 ```javascript
-curl -X GET http://localhost:8080/posts/6462286c18cd9129ef52ad4e/comments
+curl -X GET http://localhost:8080/posts/64622f5e4a4ed21fe7f50871/comments
 ```
 
 ## Registration
