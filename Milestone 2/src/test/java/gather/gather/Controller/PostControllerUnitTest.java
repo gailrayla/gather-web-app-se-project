@@ -54,7 +54,7 @@ public class PostControllerUnitTest {
         when(postRepository.findAll()).thenReturn(mockPosts);
 
         // Perform the GET request to "/posts"
-        mockMvc.perform(get("/posts")
+        mockMvc.perform(get("/posts/access")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk()) // Ensure the request is successful
                 .andExpect(jsonPath("$.length()").value(mockPosts.size())) // Check if the response JSON has the expected length
@@ -72,7 +72,7 @@ public class PostControllerUnitTest {
     public void testGetAllPosts_Empty() throws Exception {
         when(postRepository.findAll()).thenReturn(Collections.emptyList());
 
-        mockMvc.perform(get("/posts")
+        mockMvc.perform(get("/posts/access")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.length()").value(0));
@@ -85,7 +85,7 @@ public class PostControllerUnitTest {
 
         when(postRepository.save(post)).thenReturn(post);
 
-        mockMvc.perform(post("/posts") // performing the post request
+        mockMvc.perform(post("/posts/create") // performing the post request
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(post)))
                 .andExpect(status().isOk()); // expecting a successful response
@@ -95,7 +95,7 @@ public class PostControllerUnitTest {
     public void testAddPost_MissingDescription() throws Exception {
         Post post = new Post(new User("gail", "gail@example.com", "124"), null, "30 October 2023");
 
-        mockMvc.perform(post("/posts")
+        mockMvc.perform(post("/posts/create")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(post)))
                 .andExpect(status().isBadRequest());
@@ -105,7 +105,7 @@ public class PostControllerUnitTest {
     public void testAddPost_MissingDate() throws Exception {
         Post post = new Post(new User("gail", "gail@example.com", "124"), "Post1", null);
 
-        mockMvc.perform(post("/posts")
+        mockMvc.perform(post("/posts/create")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(post)))
                 .andExpect(status().isBadRequest());
@@ -115,7 +115,7 @@ public class PostControllerUnitTest {
     public void testAddPost_NullUser() throws Exception {
         Post post = new Post(null, "Post1", "30 October 2023");
 
-        mockMvc.perform(post("/posts")
+        mockMvc.perform(post("/posts/create")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(post)))
                 .andExpect(status().isBadRequest());
@@ -125,7 +125,7 @@ public class PostControllerUnitTest {
     public void testAddPost_MissingDescriptionAndDate() throws Exception {
         Post post = new Post(new User("gail", "gail@example.com", "124"), null, null);
 
-        mockMvc.perform(post("/posts")
+        mockMvc.perform(post("/posts/create")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(post)))
                 .andExpect(status().isBadRequest());
@@ -137,7 +137,7 @@ public class PostControllerUnitTest {
 
         when(postRepository.save(post)).thenReturn(post);
 
-        mockMvc.perform(post("/posts")
+        mockMvc.perform(post("/posts/create")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(post)))
                 .andExpect(status().isOk());
