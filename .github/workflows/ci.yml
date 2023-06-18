@@ -30,6 +30,13 @@ jobs:
         with:
           java-version: '17'
 
+      - name: Build and test React app
+        run: |
+          cd front-end   # Adjust the directory to your React app location
+          npm install  # Install dependencies
+          npm run build   # Build the React app
+          npm run test   # Run tests for the React app
+
       - name: Build with Maven
         run: mvn clean install
 
