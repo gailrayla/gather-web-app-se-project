@@ -1,0 +1,24 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build and tag Docker image
+        run: |
+          IMAGE_NAME="your-image-name:${{ github.sha }}"
+          docker build -t $IMAGE_NAME .
+          echo "::set-env name=IMAGE_NAME::$IMAGE_NAME"
+
+      - name: Run tests with Docker
+        run: docker run ${{ env.IMAGE_NAME }} sh -c "command-to-run-tests"
