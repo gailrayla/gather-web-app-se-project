@@ -10,6 +10,8 @@ In this milestone, we established the foundation for our web application using t
 
 - **Docker:** We utilized Docker to containerize our applications and their dependencies, streamlining the deployment process.
 
+- **Spring Boot:** The core of our web application is powered by Spring Boot, providing a robust and efficient framework for building Java-based applications.
+
 - **Rest API:** The web architecture of GATHER was constructed using Rest API, enabling seamless communication between components.
 
 - **Maven:** To simplify our build process and manage dependencies efficiently, we integrated Maven into our project.
@@ -31,4 +33,6 @@ GATHER serves as a platform for UNIST students to connect and organize various a
 ## Milestone 3: Frontend Enhancement with React
 
 In this phase, we integrated React into our project for a more dynamic and user-friendly frontend experience. The application is now deployed and accessible for use.
+
+
 
